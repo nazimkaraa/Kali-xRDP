@@ -3,7 +3,7 @@
 
 Kali-xRDP is a script that installs xRDP and XFCE 4.16 on top of Kali Linux from the Windows Store. [Win-KeX](https://www.kali.org/docs/wsl/win-kex) is the better-known method for running a GUI in WSL, but only works with Windows 10 1903+ on WSL2, whereas this project was created to work well in WSL1 or WSL2.  It includes optimizations and visual tweaks for a smooth and responsive desktop experience.  Display scaling is configured automatically and works on everything from standard unscaled displays all the way to xHiDPI (250%+) displays such as the Microsoft Surface.
 
-![image](https://user-images.githubusercontent.com/33142753/109516375-7c036f80-7a7e-11eb-99de-54ae788ebb90.png)
+![ScreenShot](https://user-images.githubusercontent.com/33142753/131357068-13439d68-55b0-4009-b506-947b58fab5b1.png)
 
 Kali-xRDP works with Windows 10 version 1809 onwards, Windows Server 2019/2022, Server Core, or Hyper-V Server.  Running Kali in WSL1 may be useful for users on older hardware without VT-d, or in a virtual machine without nested virtualization support.  Note that WSL1 has limitations in its networking stack that prevent some of Kali's included tools from working as they should, so it's advisable to run Kali in WSL2 unless you're prevented from doing so for the reasons listed above.  That said, [ZenMap](https://nmap.org/zenmap) is pre-installed and able to run TCP-only portscans in WSL1.        
 
@@ -102,4 +102,4 @@ From a security perspective, you should fork this project so you control the pac
 * Minor visual tweaks were made and fonts in XFCE4 are supplied by the host OS (Segoe UI / Cascadia Code)
 
 ![image](https://user-images.githubusercontent.com/33142753/109518093-55463880-7a80-11eb-9276-e27ffd08fcc9.png)
-
+![image](https://user-images.githubusercontent.com/33142753/109516375-7c036f80-7a7e-11eb-99de-54ae788ebb90.png)
