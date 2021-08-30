@@ -1,11 +1,11 @@
 # [Kali-xRDP • GUI for Kali Linux on WSL (Version 1 or 2) • v1.1/20210602](https://github.com/DesktopECHO/Kali-xRDP)
 *Other distributions available:* **KDE Neon** [**(kWSL)**](https://github.com/DesktopECHO/kWSL) and **Ubuntu 20.04** [**(xWSL)**](https://github.com/DesktopECHO/xWSL) 
 
-Kali-xRDP is a script that installs xRDP on-top of Kali Linux from the Windows Store.  It works under WSL1 or WSL2 and includes optimizations and visual tweaks for a smooth and responsive desktop experience.  Display scaling is configured automatically and works on everything from standard unscaled displays all the way to xHiDPI (250%+) displays like the Microsoft Surface.
+Kali-xRDP is a script that installs xRDP and XFCE 4.16 on top of Kali Linux from the Windows Store. [Win-KeX](https://www.kali.org/docs/wsl/win-kex) is the better-known method for running a GUI in WSL, but only works with Windows 10 1903+ on WSL2, whereas this project was created to work well in WSL1 or WSL2.  It includes optimizations and visual tweaks for a smooth and responsive desktop experience.  Display scaling is configured automatically and works on everything from standard unscaled displays all the way to xHiDPI (250%+) displays such as the Microsoft Surface.
 
 ![image](https://user-images.githubusercontent.com/33142753/109516375-7c036f80-7a7e-11eb-99de-54ae788ebb90.png)
 
-Other Kali GUI installers are designed to work with WSL2 only, and therefore target newer versions of Windows.  Kali-xRDP works with Windows 10 version 1809, Windows Server 2019, Server Core, or Hyper-V Server 2019.  Running Kali in WSL1 can also be helpful for newer versions of Windows running on older hardware without VT-d, or in a virtual machine without nested virtualization support.  Note that WSL1 has limitations in its networking stack that prevent some of Kali's included tools from working as they should, so you should run Kali in WSL2 unless you're prevented from doing so for the reasons listed above.       
+Kali-xRDP works with Windows 10 version 1809 onwards, Windows Server 2019/2022, Server Core, or Hyper-V Server.  Running Kali in WSL1 may be useful for users on older hardware without VT-d, or in a virtual machine without nested virtualization support.  Note that WSL1 has limitations in its networking stack that prevent some of Kali's included tools from working as they should, so you should run Kali in WSL2 unless you're prevented from doing so for the reasons listed above.  That said, [ZenMap](https://nmap.org/zenmap) is pre-installed and able to run TCP-only portscans in WSL1.        
 
 The install script is meant to be run on a new Kali Linux installation from the Microsoft Store.  If Kali is not installed on your system it will download the .AppX image directly from Microsoft and install it for you. 
 
@@ -23,7 +23,7 @@ You will be asked a few questions.  The installer script determines the current 
      Port number for SSHd traffic or hit Enter for default [3322]:
      [Not recommended!] Type X to eXclude from Windows Defender:
 
-The script will download the [LxRunOffline](https://github.com/DDoSolitary/LxRunOffline) distro manager to bootstrap the installation.  Install times will vary depending on system performance and presence of antivirus software.  A fast system with broadband Internet can complete the install in under 10 minutes and most machines will complete within 20 minutes. 
+The script will download the [LxRunOffline](https://github.com/DDoSolitary/LxRunOffline) distro manager to bootstrap the installation.  Install times will vary depending on system performance and the presence of antivirus software.  A fast system with broadband Internet can complete the install in under 10 minutes and most machines will complete within 20 minutes.  Expect it to take 30+ minutes if Windows Defender is running.  If you want to track progress logs are located in %TEMP%\Kali-xRDP. 
 
      [22:18:12] Prepare Distro (~1m00s)
      [22:19:08] Install xRDP and Kali-Linux-Core packages (~3m00s)
@@ -86,7 +86,7 @@ From a security perspective, you should fork this project so you control the pac
 
 - Sign into GitHub and fork this project
 - Edit ```Kali-xRDP.cmd```.  On line 2 you will see ```SET GITORG=DesktopECHO``` - Change ```DesktopECHO``` to the name of your own repository.
-- Customize the script any way you like.
+- Customize the script any way you prefer.
 - Launch the script using your repository name:
  ```PowerShell -executionpolicy bypass -command "wget https://github.com/YOUR-ORG/Kali-xRDP/raw/main/Kali-xRDP.cmd -UseBasicParsing -OutFile Kali-xRDP.cmd ; .\Kali-xRDP.cmd"```
 
@@ -94,7 +94,7 @@ From a security perspective, you should fork this project so you control the pac
 
 * Rebuilt [WebKitGTK](https://webkit.org/) 2.32 for WSL
 * When you log out out of a desktop session the entire WSL instance is restarted, equivalent to a clean-boot at every login. 
-* Disconnected sessions continue to run in the background and resuming the session works reliably.
+* Disconnected sessions continue to run in the background and resuming your session works reliably.
 * Enabled gksu for apps needing elevated rights (Synaptic, root console) to work around limitations in WSL1.
 * [apt-fast](https://github.com/ilikenwf/apt-fast) added to improve download speed and reliability.
 * Mozilla Seamonkey included as a stable browser that's kept up to date via apt.  Current versions of Chrome/Firefox do not work in WSL1.
