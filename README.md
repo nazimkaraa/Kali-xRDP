@@ -5,7 +5,7 @@ Kali-xRDP is a script that installs xRDP and XFCE 4.16 on top of Kali Linux from
 
 ![image](https://user-images.githubusercontent.com/33142753/109516375-7c036f80-7a7e-11eb-99de-54ae788ebb90.png)
 
-Kali-xRDP works with Windows 10 version 1809 onwards, Windows Server 2019/2022, Server Core, or Hyper-V Server.  Running Kali in WSL1 may be useful for users on older hardware without VT-d, or in a virtual machine without nested virtualization support.  Note that WSL1 has limitations in its networking stack that prevent some of Kali's included tools from working as they should, so you should run Kali in WSL2 unless you're prevented from doing so for the reasons listed above.  That said, [ZenMap](https://nmap.org/zenmap) is pre-installed and able to run TCP-only portscans in WSL1.        
+Kali-xRDP works with Windows 10 version 1809 onwards, Windows Server 2019/2022, Server Core, or Hyper-V Server.  Running Kali in WSL1 may be useful for users on older hardware without VT-d, or in a virtual machine without nested virtualization support.  Note that WSL1 has limitations in its networking stack that prevent some of Kali's included tools from working as they should, so it's advisable to run Kali in WSL2 unless you're prevented from doing so for the reasons listed above.  That said, [ZenMap](https://nmap.org/zenmap) is pre-installed and able to run TCP-only portscans in WSL1.        
 
 The install script is meant to be run on a new Kali Linux installation from the Microsoft Store.  If Kali is not installed on your system it will download the .AppX image directly from Microsoft and install it for you. 
 
